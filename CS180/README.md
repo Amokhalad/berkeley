@@ -1,7 +1,6 @@
 # CS180 — Intro to Computer Vision and Computational Photography
 
-Consolidated project work for UC Berkeley CS180. Each subdirectory is a
-self-contained project (originally a standalone repository).
+Project work for UC Berkeley CS180.
 
 | Project | Description |
 | --- | --- |
