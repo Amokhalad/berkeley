@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.image-gallery {
+	display: flex;
+	flex-direction: column; /* Stack images and caption vertically */
+	align-items: center;
+	margin-top: 20px;
+}
+
+.images-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+}
+
+.image-container {
+	flex: 1 1 calc(20% - 20px);
+	max-width: 100px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.img-md {
+	width: 50%;
+	max-width: 450px;
+}
+
+.img-sm {
+	width: 50%;
+	max-width: 300px;
+}
+figure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Figcaption styling */
+figcaption {
+    font-style: italic;
+	width: 60%; /* Ensure it takes full width under images */	
+    font-size: 1rem;
+    color: #697374;
+    text-align: center;
+    margin-top: 0.5rem;
+	margin-bottom: 15px;
+	
+}
+
+/* Unified styling for all headers */
+h2, h3, h4 {
+    color: #2c3e50; /* Consistent color for all headers */
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/* Specific font size and additional styling for headers */
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;  /* Strong emphasis */
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+    border-left: 5px solid #3498db;
+    padding-left: 0.5rem;
+}
+
+h4 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* General paragraph styling */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* List styling for ordered lists */
+ol {
+    margin-left: 2rem;
+}
+

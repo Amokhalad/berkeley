@@ -1,0 +1,244 @@
+[
+  {
+    "original": "data/emir.tif",
+    "grayscale": [
+      "rgb_images/emir_r.jpg",
+      "rgb_images/emir_g.jpg",
+      "rgb_images/emir_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/emir_r_edges.jpg",
+      "rgb_images/emir_g_edges.jpg",
+      "rgb_images/emir_b_edges.jpg"
+    ],
+    "color": "color_images/emir.jpg",
+    "red_shift": [
+      106,
+      40
+    ],
+    "green_shift": [
+      50,
+      24
+    ]
+  },
+  {
+    "original": "data/church.tif",
+    "grayscale": [
+      "rgb_images/church_r.jpg",
+      "rgb_images/church_g.jpg",
+      "rgb_images/church_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/church_r_edges.jpg",
+      "rgb_images/church_g_edges.jpg",
+      "rgb_images/church_b_edges.jpg"
+    ],
+    "color": "color_images/church.jpg",
+    "red_shift": [
+      58,
+      -4
+    ],
+    "green_shift": [
+      24,
+      4
+    ]
+  },
+  {
+    "original": "data/three_generations.tif",
+    "grayscale": [
+      "rgb_images/three_generations_r.jpg",
+      "rgb_images/three_generations_g.jpg",
+      "rgb_images/three_generations_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/three_generations_r_edges.jpg",
+      "rgb_images/three_generations_g_edges.jpg",
+      "rgb_images/three_generations_b_edges.jpg"
+    ],
+    "color": "color_images/three_generations.jpg",
+    "red_shift": [
+      114,
+      12
+    ],
+    "green_shift": [
+      56,
+      18
+    ]
+  },
+  {
+    "original": "data/melons.tif",
+    "grayscale": [
+      "rgb_images/melons_r.jpg",
+      "rgb_images/melons_g.jpg",
+      "rgb_images/melons_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/melons_r_edges.jpg",
+      "rgb_images/melons_g_edges.jpg",
+      "rgb_images/melons_b_edges.jpg"
+    ],
+    "color": "color_images/melons.jpg",
+    "red_shift": [
+      176,
+      12
+    ],
+    "green_shift": [
+      80,
+      10
+    ]
+  },
+  {
+    "original": "data/onion_church.tif",
+    "grayscale": [
+      "rgb_images/onion_church_r.jpg",
+      "rgb_images/onion_church_g.jpg",
+      "rgb_images/onion_church_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/onion_church_r_edges.jpg",
+      "rgb_images/onion_church_g_edges.jpg",
+      "rgb_images/onion_church_b_edges.jpg"
+    ],
+    "color": "color_images/onion_church.jpg",
+    "red_shift": [
+      108,
+      36
+    ],
+    "green_shift": [
+      52,
+      24
+    ]
+  },
+  {
+    "original": "data/train.tif",
+    "grayscale": [
+      "rgb_images/train_r.jpg",
+      "rgb_images/train_g.jpg",
+      "rgb_images/train_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/train_r_edges.jpg",
+      "rgb_images/train_g_edges.jpg",
+      "rgb_images/train_b_edges.jpg"
+    ],
+    "color": "color_images/train.jpg",
+    "red_shift": [
+      84,
+      34
+    ],
+    "green_shift": [
+      42,
+      8
+    ]
+  },
+  {
+    "original": "data/icon.tif",
+    "grayscale": [
+      "rgb_images/icon_r.jpg",
+      "rgb_images/icon_g.jpg",
+      "rgb_images/icon_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/icon_r_edges.jpg",
+      "rgb_images/icon_g_edges.jpg",
+      "rgb_images/icon_b_edges.jpg"
+    ],
+    "color": "color_images/icon.jpg",
+    "red_shift": [
+      90,
+      22
+    ],
+    "green_shift": [
+      42,
+      16
+    ]
+  },
+  {
+    "original": "data/self_portrait.tif",
+    "grayscale": [
+      "rgb_images/self_portrait_r.jpg",
+      "rgb_images/self_portrait_g.jpg",
+      "rgb_images/self_portrait_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/self_portrait_r_edges.jpg",
+      "rgb_images/self_portrait_g_edges.jpg",
+      "rgb_images/self_portrait_b_edges.jpg"
+    ],
+    "color": "color_images/self_portrait.jpg",
+    "red_shift": [
+      176,
+      38
+    ],
+    "green_shift": [
+      80,
+      32
+    ]
+  },
+  {
+    "original": "data/harvesters.tif",
+    "grayscale": [
+      "rgb_images/harvesters_r.jpg",
+      "rgb_images/harvesters_g.jpg",
+      "rgb_images/harvesters_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/harvesters_r_edges.jpg",
+      "rgb_images/harvesters_g_edges.jpg",
+      "rgb_images/harvesters_b_edges.jpg"
+    ],
+    "color": "color_images/harvesters.jpg",
+    "red_shift": [
+      124,
+      10
+    ],
+    "green_shift": [
+      60,
+      16
+    ]
+  },
+  {
+    "original": "data/sculpture.tif",
+    "grayscale": [
+      "rgb_images/sculpture_r.jpg",
+      "rgb_images/sculpture_g.jpg",
+      "rgb_images/sculpture_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/sculpture_r_edges.jpg",
+      "rgb_images/sculpture_g_edges.jpg",
+      "rgb_images/sculpture_b_edges.jpg"
+    ],
+    "color": "color_images/sculpture.jpg",
+    "red_shift": [
+      140,
+      -26
+    ],
+    "green_shift": [
+      34,
+      -10
+    ]
+  },
+  {
+    "original": "data/lady.tif",
+    "grayscale": [
+      "rgb_images/lady_r.jpg",
+      "rgb_images/lady_g.jpg",
+      "rgb_images/lady_b.jpg"
+    ],
+    "edges": [
+      "rgb_images/lady_r_edges.jpg",
+      "rgb_images/lady_g_edges.jpg",
+      "rgb_images/lady_b_edges.jpg"
+    ],
+    "color": "color_images/lady.jpg",
+    "red_shift": [
+      120,
+      12
+    ],
+    "green_shift": [
+      56,
+      10
+    ]
+  }
+]

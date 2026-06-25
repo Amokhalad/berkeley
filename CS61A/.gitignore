@@ -1,0 +1,10 @@
+# Jupyter Notebook
+.ipynb_checkpoints
+__pypackages__/
+**/.DS_Store
+.DS_Store
+
+# private material
+*hw
+*labs
+*projects

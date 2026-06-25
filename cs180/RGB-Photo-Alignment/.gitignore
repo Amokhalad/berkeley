@@ -1,0 +1,7 @@
+__pycache__
+.vscode
+**node_modules
+code
+deliverable
+deliverable.zip
+.DS_Store

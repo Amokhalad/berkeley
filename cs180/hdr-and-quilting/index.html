@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Final Project</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="15bc01c0-e9d6-809a-9b04-f887feaf352b" class="page sans"><header><h1 class="page-title">Final Project</h1><p class="page-description"></p></header><div class="page-body"><h1 id="15bc01c0-e9d6-8036-90ce-daa92f495159" class=""><strong>Project 1: High Dynamic Range</strong></h1><h2 id="15bc01c0-e9d6-8008-90b0-d6bde2a95fc6" class="">Background</h2><p id="15bc01c0-e9d6-803f-b43a-dea4cb97dfff" class="">Modern cameras are unable to capture the full dynamic range of commonly encountered real-world scenes. In some scenes, even the best possible photograph will be partially under or over-exposed. Researchers and photographers commonly get around this limitation by combining information from multiple exposures of the same scene. In this project, we will show how we wrote software to automatically combine multiple exposures into a single high dynamic range radiance map, and then convert this radiance map to an image suitable for display through tone mapping.</p><p id="15bc01c0-e9d6-8092-a45b-dfdc04416d4e" class="">
+</p><p id="15bc01c0-e9d6-809b-991b-c84c84d14b76" class="">There are two major parts to this project:</p><ol type="1" id="15bc01c0-e9d6-8009-b3e8-fd3460add263" class="numbered-list" start="1"><li>Recovering a radiance map from a collection of images</li></ol><ol type="1" id="15bc01c0-e9d6-8037-937d-c3b1f2261053" class="numbered-list" start="2"><li>Converting this radiance map into a display image</li></ol><p id="15bc01c0-e9d6-80d9-8eb2-c96883eb08e5" class="">For the first part we will have to recover the inverse of the function mapping exposure to pixel value, <em>g</em>.</p><p id="15bc01c0-e9d6-801f-8280-ef61abc8b0fb" class="">The the second part we will start by implementing your a global tone mapping operator, and you show how we improved it to a local tone mapping procedure.</p><p id="15bc01c0-e9d6-80de-b505-e435acb85872" class="">The two relevant papers are <a href="http://www.pauldebevec.com/Research/HDR/debevec-siggraph97.pdf">Debevec and Malik 1997</a> and <a href="http://people.csail.mit.edu/fredo/PUBLI/Siggraph2002/DurandBilateral.pdf">Durand 2002</a>.</p><p id="15bc01c0-e9d6-8044-b26d-fabe6604bf1b" class=""><br/>We will use the following image captured labeled with their sequence number followed by their relative exposure (which happens to be milliseconds).<br/></p><div id="15bc01c0-e9d6-803f-90ae-d354f657d460" class="column-list"><div id="15bc01c0-e9d6-80f3-9c73-ccfb2a8cf59a" style="width:50%" class="column"><figure id="15bc01c0-e9d6-8051-abff-e570a39c9a10" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/1_4.jpg"><img style="width:707.9861450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/1_4.jpg"/></a><figcaption>1_4</figcaption></figure></div><div id="15bc01c0-e9d6-80f8-b07f-d2843b2137ad" style="width:50%" class="column"><figure id="15bc01c0-e9d6-80c8-afa2-dea343b171cb" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/1_25.jpg"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/1_25.jpg"/></a><figcaption>1_25</figcaption></figure></div></div><div id="15bc01c0-e9d6-800d-b96f-d49cca26d95d" class="column-list"><div id="15bc01c0-e9d6-80b4-8eb7-e5d682d007e5" style="width:50%" class="column"><figure id="15bc01c0-e9d6-80e2-98a0-f2eebe121e64" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/3_1.jpg"><img style="width:720.98095703125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/3_1.jpg"/></a><figcaption>3_1</figcaption></figure></div><div id="15bc01c0-e9d6-80a3-8698-e30048e610df" style="width:50%" class="column"><figure id="15bc01c0-e9d6-80be-a51a-e54846a87cc0" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/17_1.jpg"><img style="width:720.98095703125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/17_1.jpg"/></a><figcaption>17_1</figcaption></figure></div></div><h2 id="15bc01c0-e9d6-8023-8ac2-e7860768e8f9" class="">Part 1: Recovering a radiance map</h2><p id="15bc01c0-e9d6-8053-a7a9-ddcb74c40af2" class="">Following Debevec and Malik&#x27;s method, we recover the radiance map in two key steps: solving for the camera response function <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span></span><span>﻿</span></span> and combining multiple exposures to create the HDR radiance map.</p><h3 id="15bc01c0-e9d6-8079-9dfb-de56de0350fa" class="">Camera Response Function Recovery</h3><p id="15bc01c0-e9d6-80d0-944d-f1ddb4a72348" class="">We solve for <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span></span><span>﻿</span></span> using a system of equations that considers:</p><ol type="1" id="15bc01c0-e9d6-800b-aa4b-f172533e76d6" class="numbered-list" start="1"><li>Data-fitting terms: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><msub><mi>Z</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false">)</mo><mo>=</mo><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>E</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>+</mo><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><msub><mi>t</mi><mi>j</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(Z_{ij}) = \ln(E_{i}) + \ln(Δt_{j})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span></li></ol><ol type="1" id="15bc01c0-e9d6-8043-9260-ee91922eba8a" class="numbered-list" start="2"><li>Smoothness constraint: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span></span><span>﻿</span></span> should be smooth, enforced by minimizing its second derivative</li></ol><ol type="1" id="15bc01c0-e9d6-80cb-af7b-e096868400a4" class="numbered-list" start="3"><li>Weighting function: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>w</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo><mo>=</mo><mi>z</mi><mtext> for </mtext><mi>z</mi><mo>≤</mo><mn>127.5</mn><mo separator="true">;</mo><mtext>  </mtext><mi>w</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo><mo>=</mo><mn>255</mn><mo>−</mo><mi>z</mi><mtext> for </mtext><mi>z</mi><mo>&gt;</mo><mn>127.5</mn></mrow><annotation encoding="application/x-tex">w(z) = z \text{ for } z ≤ 127.5; \; w(z) = 255-z \text{ for } z &gt; 127.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mord text"><span class="mord"> for </span></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">127.5</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">255</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mord text"><span class="mord"> for </span></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">127.5</span></span></span></span></span><span>﻿</span></span></li></ol><p id="15bc01c0-e9d6-808a-b709-d15b7982176b" class="">The system is solved separately for each color channel using least squares optimization with SVD. Figure 1 shows the recovered g functions for each channel, demonstrating the nonlinear relationship between pixel values and log exposure.</p><figure id="15bc01c0-e9d6-804a-b3e8-d37f7fd9ea05" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/c7d3acd1-1d25-4017-a6c9-59ae86d8b27d.png"><img style="width:768px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/c7d3acd1-1d25-4017-a6c9-59ae86d8b27d.png"/></a><figcaption>Figure 1: Recovered g functions for arc</figcaption></figure><h3 id="15bc01c0-e9d6-80fa-9a40-f41e46739676" class="">HDR Radiance Map Construction</h3><p id="15bc01c0-e9d6-80d9-a162-fd9d535b08e6" class="">Using the recovered g functions, we compute the radiance map by:</p><ol type="1" id="15bc01c0-e9d6-80c1-b908-e11cfbe05fe3" class="numbered-list" start="1"><li>Converting pixel values to log radiance: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>E</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mi>g</mi><mo stretchy="false">(</mo><msub><mi>Z</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><msub><mi>t</mi><mi>j</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ln(E_i) = g(Z_{ij}) - \ln(Δt_j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">ij</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0361em;vertical-align:-0.2861em;"></span><span class="mop">ln</span><span class="mopen">(</span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span></li></ol><ol type="1" id="15bc01c0-e9d6-8084-a27e-f2e4c6851102" class="numbered-list" start="2"><li>Combining multiple exposures using weighted average based on pixel reliability</li></ol><ol type="1" id="15bc01c0-e9d6-8063-9fe5-dc5159db73a5" class="numbered-list" start="3"><li>Converting from log space to linear space: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>i</mi></msub><mo>=</mo><mi>exp</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>ln</mi><mo>⁡</mo><mo stretchy="false">(</mo><msub><mi>E</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">E_i = \exp(\ln(E_i))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">exp</span><span class="mopen">(</span><span class="mop">ln</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">))</span></span></span></span></span><span>﻿</span></span></li></ol><p id="15bc01c0-e9d6-80bf-ac20-fe29a4d12da5" class="">Figure 2 shows the resulting radiance map visualized in log space. The high dynamic range is evident from the detailed preservation in both bright areas (windows, direct light) and dark regions (shadows, indoor areas).</p><p id="15bc01c0-e9d6-80b4-ad4d-d647b6d4f4de" class="">The recovered radiance map successfully captures the full dynamic range of the scene, though raw values require tone mapping for display on standard devices.</p><figure id="15bc01c0-e9d6-80bc-bc4d-c1deeff456ac" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/hdr_map.png"><img style="width:707.9774780273438px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/hdr_map.png"/></a><figcaption>Figure 2: HDR Radiance Maps</figcaption></figure><h2 id="15bc01c0-e9d6-80ca-9397-ef80d84c0c37" class="">Part 2: Tone Mapping</h2><p id="15bc01c0-e9d6-805e-affa-cd6c4b45f9c1" class="">We implemented three tone mapping approaches to convert the HDR radiance map to displayable images:</p><h3 id="15bc01c0-e9d6-8041-a7e8-c570c7e5357b" class="">Global Operators</h3><ol type="1" id="15bc01c0-e9d6-802e-a28a-d845aa092538" class="numbered-list" start="1"><li><strong>Global Scale</strong>: Simple linear scaling of radiance values to [0,1] range. While straightforward, this approach often loses detail in extreme brightness regions.</li></ol><ol type="1" id="15bc01c0-e9d6-80e6-802b-f9097ee395b6" class="numbered-list" start="2"><li><strong>Global Simple</strong>: Implements <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\log(L)/\max(\log(L))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">L</span><span class="mclose">)</span><span class="mord">/</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal">L</span><span class="mclose">))</span></span></span></span></span><span>﻿</span></span> transformation. This better preserves details across the dynamic range compared to linear scaling, but can appear flat.</li></ol><h3 id="15bc01c0-e9d6-8099-8f6d-de409bd9637b" class="">Local Operator: Durand&#x27;s Bilateral Filter</h3><p id="15bc01c0-e9d6-80e5-86b3-f60f2c7f20d8" class="">Our main implementation follows Durand&#x27;s bilateral filtering approach:</p><ol type="1" id="15bc01c0-e9d6-8042-b267-e499e9db5c3e" class="numbered-list" start="1"><li>Decompose log-intensity into base and detail layers:<ul id="15bc01c0-e9d6-8065-8328-c8ea4fe4a516" class="bulleted-list"><li style="list-style-type:disc">Base layer (B): Apply bilateral filter to capture large-scale variations</li></ul><ul id="15bc01c0-e9d6-80ad-ba9b-e837e97fddd4" class="bulleted-list"><li style="list-style-type:disc">Detail layer (D): Subtract base from log-intensity</li></ul></li></ol><ol type="1" id="15bc01c0-e9d6-8068-9a34-fcbc267b32b4" class="numbered-list" start="2"><li>Compress dynamic range of base layer while preserving detail:<ul id="15bc01c0-e9d6-80b9-b9c9-fbf88c620cb4" class="bulleted-list"><li style="list-style-type:disc">Scale base layer to desired dynamic range (typically 2-8 stops)</li></ul><ul id="15bc01c0-e9d6-80a0-b209-efb5a3c3d9ed" class="bulleted-list"><li style="list-style-type:disc">Recombine with unmodified detail layer</li></ul><ul id="15bc01c0-e9d6-805a-895a-f243b115701c" class="bulleted-list"><li style="list-style-type:disc">Apply gamma correction for display</li></ul></li></ol><ol type="1" id="15bc01c0-e9d6-8008-93b3-ee97cd4644f4" class="numbered-list" start="3"><li>Preserve color by:<ul id="15bc01c0-e9d6-80ee-911e-f1006f76f696" class="bulleted-list"><li style="list-style-type:disc">Computing chrominance ratios (R/I, G/I, B/I)</li></ul><ul id="15bc01c0-e9d6-80cb-a5b3-c514597a2e38" class="bulleted-list"><li style="list-style-type:disc">Applying tone mapping to intensity only</li></ul><ul id="15bc01c0-e9d6-8088-8dd2-f0156a082f28" class="bulleted-list"><li style="list-style-type:disc">Reconstructing RGB using mapped intensity and original ratios</li></ul></li></ol><p id="15bc01c0-e9d6-8074-a8fe-c62e08607ded" class="">This local approach better preserves local contrast and detail while compressing the overall dynamic range. Figure 3 compares results across all three methods, while Figure 4 demonstrates the decomposition into base and detail layers.</p><figure id="15bc01c0-e9d6-8025-84b3-c63cd9acaf8b" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/4b55ca5a-0efc-4def-b984-83fcf5176f40.png"><img style="width:707.984375px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/4b55ca5a-0efc-4def-b984-83fcf5176f40.png"/></a><figcaption>Figure 4: Compare Results of all three toning methods</figcaption></figure><figure id="15bc01c0-e9d6-8046-9828-df4146989973" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/detail.png"><img style="width:624px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/detail.png"/></a><figcaption>Figure 4: Decomposition into base and detail layers</figcaption></figure><h2 id="15bc01c0-e9d6-809c-ac88-c447a87e7924" class="">All HDR Images</h2><p id="15bc01c0-e9d6-8079-adb5-d51b2f66f926" class="">Below are the results for the arch, bonsai, chapel, gatrage, garden, house, mug, and window for both global simple and Durand tone mapping:</p><div id="15bc01c0-e9d6-8044-830c-cb8107aab580" class="column-list"><div id="c83a52b0-6837-4a0e-b36d-5438aad2ad71" style="width:50%" class="column"><p id="9a910c61-2d3c-4974-a755-2c1bb5a0ecc0" class=""><strong>Global Simple</strong></p><figure id="15bc01c0-e9d6-80de-a23f-f03c6bcad449" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple.png"><img style="width:720.98095703125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple.png"/></a></figure><figure id="15bc01c0-e9d6-802a-92cd-f150a21cde66" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%201.png"><img style="width:720.98095703125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%201.png"/></a></figure><figure id="15bc01c0-e9d6-804c-b5b0-cfbb22752507" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%202.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%202.png"/></a></figure><figure id="15bc01c0-e9d6-8055-acce-e08808d5ef9c" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%203.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%203.png"/></a></figure><figure id="15bc01c0-e9d6-8029-b821-f033b752fe28" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%204.png"><img style="width:720.98095703125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%204.png"/></a></figure><figure id="15bc01c0-e9d6-80f8-87f8-d95679eace2b" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%205.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%205.png"/></a></figure><figure id="15bc01c0-e9d6-808c-aa1c-cc3e37d5f64e" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%206.png"><img style="width:720.98095703125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%206.png"/></a></figure><figure id="15bc01c0-e9d6-8047-9021-eb670930eede" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%207.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/global_simple%207.png"/></a></figure></div><div id="aeb7cc68-8aef-41d9-88dd-10e67da574d7" style="width:50%" class="column"><p id="10d4755e-dcff-4f1c-90e3-9eba158907e9" class=""><strong>Durand</strong></p><figure id="15bc01c0-e9d6-80d8-9c80-e41ffbd95e50" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand.png"><img style="width:720.98095703125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand.png"/></a></figure><figure id="15bc01c0-e9d6-809f-9741-f87e62a0e68f" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%201.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%201.png"/></a></figure><figure id="15bc01c0-e9d6-80b5-b4e7-c24fe196e5db" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%202.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%202.png"/></a></figure><figure id="15bc01c0-e9d6-8040-b55d-c366a7fe0af9" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%203.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%203.png"/></a></figure><figure id="15cc01c0-e9d6-8095-9197-c4d78a97d8a8" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%204.png"><img style="width:330.97222900390625px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%204.png"/></a></figure><figure id="15bc01c0-e9d6-8079-b8bf-d817f2f21525" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%205.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%205.png"/></a></figure><figure id="15bc01c0-e9d6-80d7-9d3e-c82093391d04" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%206.png"><img style="width:720.98095703125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%206.png"/></a></figure><figure id="15bc01c0-e9d6-80cb-832f-f8cb84c0e701" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%207.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%207.png"/></a></figure></div></div><p id="15cc01c0-e9d6-801e-b83a-dab71469952b" class="">
+</p><h2 id="15cc01c0-e9d6-8095-be3d-cf45625c18f7" class="">Bells and Whistles</h2><p id="15cc01c0-e9d6-8009-afbb-f34fdb16a622" class="">For bells and whistles I chose to do auto alignment for images that are misaligned. I did this by simply using the <code>align</code> function I used from project 1, with pyramids and NCC, except I edited it such that it aligns two different images instead of the channels of a single image. </p><p id="15cc01c0-e9d6-8090-9cbf-ecef76d2188d" class="">The parameters of <code>align</code> are now take in a <code>src_im</code> and <code>dst_im</code>, where I align only the red channel, going from src to dst, and roll the other channels by that shift. Moreover, I aligned only the edges using a canny edge detector, since images at different expose rates had a significantly different pixel values.</p><p id="15cc01c0-e9d6-8057-b820-df62bc167e34" class="">To align all the images, I aligned each image to the previous one (with the first image being the starting point). </p><p id="15cc01c0-e9d6-8044-9b25-eac267b67490" class="">Here is the results of the unaligned images with the aligned images with the Durand tone mapping. Perhaps the most notable difference is in the garden and arc (the first two pairs)</p><div id="15cc01c0-e9d6-804c-aa6c-d17cdab45608" class="column-list"><div id="15cc01c0-e9d6-800a-8acc-d411ec9825d8" style="width:50%" class="column"><p id="15cc01c0-e9d6-80e5-8c2c-d73fd87cbcaa" class=""><strong>Unaligned</strong></p><figure id="15cc01c0-e9d6-8010-bf7c-c464d71cc3e6" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%204.png"><img style="width:432px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%204.png"/></a></figure><figure id="15cc01c0-e9d6-8021-9bc6-d7c6ced1565a" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand.png"><img style="width:720.98095703125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand.png"/></a></figure><figure id="15cc01c0-e9d6-80bb-ad69-edafa07ba84a" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%201.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%201.png"/></a></figure><figure id="15cc01c0-e9d6-800d-9f68-cd8ea958173f" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%202.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%202.png"/></a></figure><figure id="15cc01c0-e9d6-80c3-a3d6-c9c34d971301" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%203.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%203.png"/></a></figure><figure id="15cc01c0-e9d6-80de-85ec-fa7c15f62ef3" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%205.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%205.png"/></a></figure><figure id="15cc01c0-e9d6-8088-8178-e0205f7d344f" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%206.png"><img style="width:720.98095703125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%206.png"/></a></figure><figure id="15cc01c0-e9d6-80ec-93aa-f13a804e5880" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%207.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%207.png"/></a></figure></div><div id="15cc01c0-e9d6-80f6-863e-f1b4d84d0eb4" style="width:50%" class="column"><p id="15cc01c0-e9d6-8074-9913-f5a5cbcf0176" class=""><strong>Aligned</strong></p><figure id="15cc01c0-e9d6-800f-972b-d36594e076e0" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%208.png"><img style="width:432px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%208.png"/></a></figure><figure id="15cc01c0-e9d6-804b-b874-d49033e7a35b" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%209.png"><img style="width:1280px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%209.png"/></a></figure><figure id="15cc01c0-e9d6-8002-90fa-e2cd0275414b" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2010.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2010.png"/></a></figure><figure id="15cc01c0-e9d6-804f-828c-dfc977278950" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2011.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2011.png"/></a></figure><figure id="15cc01c0-e9d6-8016-9594-cc6219ce6bf0" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2012.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2012.png"/></a></figure><figure id="15cc01c0-e9d6-80b0-a731-c495fc9e1251" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2013.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2013.png"/></a></figure><figure id="15cc01c0-e9d6-8022-afd4-eb9c9669655b" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2014.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2014.png"/></a></figure><figure id="15cc01c0-e9d6-80c1-8184-ca4e03f64c11" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2015.png"><img style="width:330.9809265136719px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/durand%2015.png"/></a></figure></div></div><p id="15cc01c0-e9d6-80cf-9636-c55cdfb8e197" class="">
+</p><hr id="15bc01c0-e9d6-80e9-97a5-eb6da09813fa"/><h1 id="15bc01c0-e9d6-80ec-a86d-e063bdb6ab90" class="">Project 2: Image Quilting for Texture Synthesis and Transfer</h1><h2 id="15bc01c0-e9d6-80b5-8bc6-d268dea3f580" class="">Background</h2><p id="15bc01c0-e9d6-80d8-8627-ec30640b4632" class="">The goal of this project was to implement the image quilting algorithm for texture synthesis and transfer, based on the seminal SIGGRAPH 2001 <a href="http://www.eecs.berkeley.edu/Research/Projects/CS/vision/papers/efros-siggraph01.pdf">paper</a> by Efros and Freeman. The project explores techniques for creating larger textures from small sample images and transferring texture characteristics between images.</p><p id="15bc01c0-e9d6-80b4-b41a-d9d76af13b8a" class="">
+</p><p id="15bc01c0-e9d6-80d5-965c-fdc71383d7ad" class="">Below we implement three different techniques for texture synthesis, gradually getting more complex. </p><ol type="1" id="15bc01c0-e9d6-8066-8370-f88cc4b0eff1" class="numbered-list" start="1"><li><strong>Random Texture Synthesis: </strong>The first is as simple as randomly sampling patches from an input texture to create an output image.</li></ol><ol type="1" id="15bc01c0-e9d6-801b-9cc7-f34f6a74236c" class="numbered-list" start="2"><li><strong>Overlapping Patches Synthesis: </strong>This technique improves upon the random sampling by introducing patch overlapping and cost-based patch selection.</li></ol><ol type="1" id="15bc01c0-e9d6-804a-992f-f32854f00213" class="numbered-list" start="3"><li><strong>Seam Finding: </strong>This method intrudcues advanced path blending using seam finding by computing a minimum-cost paths (we can use Dijstra algorithm) to find optimal seam routs.</li></ol><p id="15bc01c0-e9d6-807d-b644-d1d1dd6e8546" class="">An image is worth a thousand words and Erfos paper has the perfect figure describing the difference with the three techniques above:</p><figure id="15bc01c0-e9d6-8051-896e-ea9b0de3933c" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/image.png"><img style="width:707.9774780273438px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/image.png"/></a></figure><p id="15bc01c0-e9d6-8056-a781-f26626b68f73" class="">
+</p><p id="15bc01c0-e9d6-805c-ab13-f77f50a98a9c" class="">Finally, we show texture transfering happening on Richard Feynman.</p><h2 id="15bc01c0-e9d6-80ed-b60c-e3e96b20bfc7" class="">Implemented Techniques</h2><h3 id="15bc01c0-e9d6-80d5-899a-f8ccd7c9ef6c" class="">1. Random Texture Synthesis</h3><p id="15bc01c0-e9d6-805f-9be8-c33b89a04682" class="">The first approach, <code>quilt_random()</code>, randomly samples square patches from the input texture to create an output image. This method serves as a baseline, demonstrating the simplest form of texture synthesis.</p><p id="15bc01c0-e9d6-8066-9df3-f02557ab801e" class=""><strong>Key Implementation:</strong></p><ul id="15bc01c0-e9d6-8032-b993-dcaba2901a6b" class="bulleted-list"><li style="list-style-type:disc">Extracts random patches of a specified size</li></ul><ul id="15bc01c0-e9d6-8031-8edf-fe7aa5a7e7e4" class="bulleted-list"><li style="list-style-type:disc">Tiles patches to fill the output image</li></ul><ul id="15bc01c0-e9d6-80ff-a01e-ef79f30d665a" class="bulleted-list"><li style="list-style-type:disc">Simple but produces visually discontinuous results</li></ul><h3 id="15bc01c0-e9d6-8042-864b-f8d987282100" class="">2. Overlapping Patches Synthesis</h3><p id="15bc01c0-e9d6-8033-b89b-fb2801749010" class="">The <code>quilt_simple()</code> method improves upon the random sampling by introducing patch overlapping and cost-based patch selection.</p><p id="15bc01c0-e9d6-80a7-a26b-f05fd1c04482" class=""><strong>Key Components:</strong></p><ul id="15bc01c0-e9d6-80b8-a5cf-c894ada380b1" class="bulleted-list"><li style="list-style-type:disc"><strong>SSD Patch Matching:</strong> Implemented <code>ssd_patch()</code> to compute the Sum of Squared Differences (SSD) between overlapping regions</li></ul><ul id="15bc01c0-e9d6-80c2-b5fd-c374e8ef013f" class="bulleted-list"><li style="list-style-type:disc"><strong>Patch Selection:</strong> <code>choose_sample()</code> selects patches with low SSD costs, introducing controlled randomness via the tolerance parameter</li></ul><ul id="15bc01c0-e9d6-8086-bf0f-e2ee1f927b39" class="bulleted-list"><li style="list-style-type:disc">Overlapping regions help create more coherent texture transitions</li></ul><h3 id="15bc01c0-e9d6-80f2-a1c6-e8434b7a61fd" class="">3. Seam Finding</h3><p id="15bc01c0-e9d6-8038-88e4-e83608aa92b9" class="">The <code>quilt_cut()</code> method introduces advanced patch blending using seam finding:</p><ul id="15bc01c0-e9d6-80e3-bc10-f3e4bd5bb910" class="bulleted-list"><li style="list-style-type:disc">Computes minimum-cost paths through overlapping regions</li></ul><ul id="15bc01c0-e9d6-8072-82a7-f672232ab164" class="bulleted-list"><li style="list-style-type:disc">Uses the <code>cut()</code> function to find optimal seam routes</li></ul><ul id="15bc01c0-e9d6-80be-8f1d-eb7018486ed3" class="bulleted-list"><li style="list-style-type:disc">Blends patches along these low-cost paths to reduce visible artifacts</li></ul><p id="15bc01c0-e9d6-80a8-b100-e92ee5ecc655" class="">
+</p><p id="15bc01c0-e9d6-8036-94b8-c80c7d348989" class="">Below we compare the results of the three techniques above:</p><div id="15cc01c0-e9d6-8056-ac38-f27c661bb58e" class="column-list"><div id="15cc01c0-e9d6-8009-ab77-ce84bfda32bd" style="width:15.625%" class="column"><p id="15cc01c0-e9d6-80a0-92e6-c84ebae5206c" class=""><strong>Original </strong></p><figure id="15cc01c0-e9d6-8046-92b0-e2914140b2e3" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/bricks_small.jpg"><img style="width:142.4913330078125px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/bricks_small.jpg"/></a></figure><figure id="15cc01c0-e9d6-80fb-86e8-eb0390c2973a" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/sketch.jpg"><img style="width:210.92015075683594px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/sketch.jpg"/></a></figure><figure id="15cc01c0-e9d6-80a3-9495-e685697e01b4" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/text_small.jpg"><img style="width:107.98611450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/text_small.jpg"/></a></figure><figure id="15cc01c0-e9d6-8058-ae03-e68bb9d7ae92" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/white_small.jpg"><img style="width:85.00000762939453px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/white_small.jpg"/></a></figure><p id="15cc01c0-e9d6-8086-8c34-c079d0ece4e0" class="">
+</p></div><div id="d404921e-95cb-46ec-9606-15441f81a920" style="width:28.125%" class="column"><p id="87f2a225-e6da-4ead-826b-3981227b8b3a" class=""><strong>Random </strong></p><figure id="15cc01c0-e9d6-8041-9fc9-f27809146810" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_random.jpg"><img style="width:192px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_random.jpg"/></a></figure><figure id="15cc01c0-e9d6-800d-a26c-f133d06e0d29" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_random%201.jpg"><img style="width:192px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_random%201.jpg"/></a></figure><figure id="15cc01c0-e9d6-8028-9dbc-ccba870095bf" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_random%202.jpg"><img style="width:205.32986450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_random%202.jpg"/></a></figure><figure id="15cc01c0-e9d6-8084-b11f-f2d0ab84445d" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_random%203.jpg"><img style="width:205.32986450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_random%203.jpg"/></a></figure></div><div id="5943d6f7-9c73-416b-b78c-8d842faac4ad" style="width:28.125%" class="column"><p id="921621ba-1e91-40b8-a880-aab23ad667c9" class=""><strong>Overlapping</strong></p><figure id="15cc01c0-e9d6-8006-956d-cc63b27114fa" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_simple.jpg"><img style="width:192px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_simple.jpg"/></a></figure><figure id="15cc01c0-e9d6-80c5-a511-dc5cc9c53d6b" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_simple%201.jpg"><img style="width:205.32986450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_simple%201.jpg"/></a></figure><figure id="15cc01c0-e9d6-80c1-abf4-c8bfefb29bd9" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_simple%202.jpg"><img style="width:205.32986450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_simple%202.jpg"/></a></figure><figure id="15cc01c0-e9d6-8041-9837-f22dc73ce1ae" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_simple%203.jpg"><img style="width:205.32986450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_simple%203.jpg"/></a></figure></div><div id="e21dfb25-6ee7-44b5-be46-d66ba04f9830" style="width:28.125%" class="column"><p id="461e739e-a2b9-480b-a809-c67c3ec44d31" class=""><strong>Seam Finding</strong></p><figure id="15cc01c0-e9d6-807c-a7e7-ebb88c52ccf0" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_cut.jpg"><img style="width:205.32986450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_cut.jpg"/></a></figure><figure id="15cc01c0-e9d6-8082-ac1c-c3c76b4339a8" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_cut%201.jpg"><img style="width:205.32986450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_cut%201.jpg"/></a></figure><figure id="15cc01c0-e9d6-80bd-9447-eff0b017feb6" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_cut%202.jpg"><img style="width:205.32986450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_cut%202.jpg"/></a></figure><figure id="15cc01c0-e9d6-8085-896e-cc3645bc7158" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_cut%203.jpg"><img style="width:205.32986450195312px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/quilt_cut%203.jpg"/></a></figure></div></div><h2 id="15bc01c0-e9d6-80ab-b818-e540837ac400" class="">Texture Transfer</h2><p id="15bc01c0-e9d6-8098-812c-c99f9c1a31aa" class="">The <code>texture_transfer()</code> method extends the quilting algorithm to transfer texture characteristics:</p><ul id="15bc01c0-e9d6-80c1-9275-f4abba1c787e" class="bulleted-list"><li style="list-style-type:disc">Incorporates a correspondence term based on image illuminance</li></ul><ul id="15bc01c0-e9d6-809b-8129-ca8a66b14603" class="bulleted-list"><li style="list-style-type:disc">Allows guiding the texture synthesis process using a target image&#x27;s structure</li></ul><ul id="15bc01c0-e9d6-80f2-8809-e80721f26c94" class="bulleted-list"><li style="list-style-type:disc">Balances patch matching and target image correspondence through a weight parameter</li></ul><p id="15cc01c0-e9d6-801b-96b2-f8fecdbc9c7b" class="">
+</p><p id="15bc01c0-e9d6-806c-a4bb-f5ee10e44a9d" class="">Lets transfer some of the textures onto Feynman:</p><div id="15cc01c0-e9d6-80e4-b836-eafd6df7837f" class="column-list"><div id="15cc01c0-e9d6-80da-ad22-d2139c005e1e" style="width:50%" class="column"><figure id="15cc01c0-e9d6-803e-9907-c7a33334e09f" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/feynman.jpg"><img style="width:237.48265075683594px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/feynman.jpg"/></a></figure></div><div id="15cc01c0-e9d6-80f6-b0b7-f17cb85a19f4" style="width:50%" class="column"><figure id="15cc01c0-e9d6-809a-a824-e42466736268" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/texture_transfer.jpg"><img style="width:270.9895935058594px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/texture_transfer.jpg"/></a></figure><figure id="15cc01c0-e9d6-8073-bee1-df95ba30217d" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/texture_transfer%201.jpg"><img style="width:270.9895935058594px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/texture_transfer%201.jpg"/></a></figure><figure id="15cc01c0-e9d6-80b3-8fc4-d52a613045d1" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/texture_transfer%202.jpg"><img style="width:270.9895935058594px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/texture_transfer%202.jpg"/></a></figure><figure id="15cc01c0-e9d6-8082-bde3-e9113a8c4a3b" class="image"><a href="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/texture_transfer%203.jpg"><img style="width:288px" src="Final%20Project%2015bc01c0e9d6809a9b04f887feaf352b/texture_transfer%203.jpg"/></a></figure></div></div><p id="15cc01c0-e9d6-805d-8485-d33f2296aba3" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
