@@ -11,7 +11,11 @@ Coursework and projects from UC Berkeley.
 | [CS162](./CS162) | Operating Systems and System Programming |
 | [CS170](./CS170) | Efficient Algorithms and Intractable Problems |
 | [CS180](./CS180) | Intro to Computer Vision and Computational Photography |
-| [CS189](./CS189) | Machine Learning — includes the CIFAR-10 image classification project |
+| [CS189](./CS189) | Machine Learning — CIFAR-10 classifier project and [course cheatsheets](./CS189/cheatsheets) |
 | [Data8](./Data8) | Foundations of Data Science |
 | [Data100](./Data100) | Principles and Techniques of Data Science |
 | [CS2C](./CS2C) | Data Structures & Algorithms — *Foothill College course, kept here for convenience* |
+
+---
+
+*CS189/cheatsheets is sourced from [zhaoyan1117/ml_cheatsheet](https://github.com/zhaoyan1117/ml_cheatsheet) (BSD 2-Clause; LICENSE retained).*
