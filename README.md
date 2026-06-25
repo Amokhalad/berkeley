@@ -15,7 +15,3 @@ Coursework and projects from UC Berkeley.
 | [Data8](./Data8) | Foundations of Data Science |
 | [Data100](./Data100) | Principles and Techniques of Data Science |
 | [CS2C](./CS2C) | Data Structures & Algorithms — *Foothill College course, kept here for convenience* |
-
----
-
-*CS189/cheatsheets is sourced from [zhaoyan1117/ml_cheatsheet](https://github.com/zhaoyan1117/ml_cheatsheet) (BSD 2-Clause; LICENSE retained).*
