@@ -15,3 +15,4 @@ a standalone repository.
 | [Data8](./Data8) | Foundations of Data Science |
 | [Data100](./Data100) | Principles and Techniques of Data Science |
 | [CIFAR-10-Classifier](./CIFAR-10-Classifier) | Image classification project (CS189 — Machine Learning) |
+| [CS2C](./CS2C) | Data Structures & Algorithms — *Foothill College course, kept here for convenience* |
