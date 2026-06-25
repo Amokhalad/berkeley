@@ -1,7 +1,6 @@
 # UC Berkeley
 
-Coursework and projects from UC Berkeley. Each subdirectory was originally
-a standalone repository.
+Coursework and projects from UC Berkeley.
 
 | Directory | Course |
 | --- | --- |
@@ -11,8 +10,8 @@ a standalone repository.
 | [CS161](./CS161) | Computer Security |
 | [CS162](./CS162) | Operating Systems and System Programming |
 | [CS170](./CS170) | Efficient Algorithms and Intractable Problems |
-| [cs180](./cs180) | Intro to Computer Vision and Computational Photography |
+| [CS180](./CS180) | Intro to Computer Vision and Computational Photography |
+| [CS189](./CS189) | Machine Learning — includes the CIFAR-10 image classification project |
 | [Data8](./Data8) | Foundations of Data Science |
 | [Data100](./Data100) | Principles and Techniques of Data Science |
-| [CIFAR-10-Classifier](./CIFAR-10-Classifier) | Image classification project (CS189 — Machine Learning) |
 | [CS2C](./CS2C) | Data Structures & Algorithms — *Foothill College course, kept here for convenience* |
