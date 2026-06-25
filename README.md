@@ -1,5 +1,8 @@
 # UC Berkeley
 
+![Top language](https://img.shields.io/github/languages/top/Amokhalad/berkeley)
+![Last commit](https://img.shields.io/github/last-commit/Amokhalad/berkeley)
+
 Coursework and projects from UC Berkeley.
 
 | Directory | Course |
